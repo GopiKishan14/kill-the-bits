@@ -41,26 +41,27 @@ def load_data(batch_size=128, nb_workers=64):
                  normalize
                  ])
 
-	train_set = datasets.CIFAR100(root='./data',
-									train=True,
-									download=True,
-									transform=transf_train)
+    train_set = datasets.CIFAR100(root='./data',
+                train=True,
+                download=True,
+                transform=transf_train)
 
 #     train_set = datasets.ImageFolder(
 #             root=train_data_path, transform=transf_train)
 
     train_loader = torch.utils.data.DataLoader(
-            train_set, batch_size=batch_size, shuffle=True, num_workers=nb_workers, pin_memory=True, drop_last=True)
+                train_set, batch_size=batch_size, shuffle=True, num_workers=nb_workers, pin_memory=True, drop_last=True)
 
 #     test_set = datasets.ImageFolder(
 #             root=test_data_path, transform=transf_test)
 
-	test_set = datasets.CIFAR100(root='./data',
-									train=False,
-									download=True,
-									transform=transf_test)
+    test_set = datasets.CIFAR100(root='./data',
+                train=False,
+                download=True,
+                transform=transf_test)
     test_loader = torch.utils.data.DataLoader(
-            test_set, batch_size=batch_size, shuffle=False, num_workers=nb_workers, pin_memory=True)
+                test_set, batch_size=batch_size, shuffle=False, num_workers=nb_workers, pin_memory=True)
 
 
     return train_loader, test_loader
+

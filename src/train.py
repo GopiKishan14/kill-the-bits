@@ -1,6 +1,8 @@
 from models.resnet import *
 
 import torch
+import torch.nn as nn
+
 import torchvision
 import torchvision.transforms as transforms
 
@@ -13,7 +15,7 @@ from data.dataloader import load_data
 """
 LOAD CIFAR100
 """
-train_loader, test_loader = load_data()
+trainloader, testloader = load_data()
 
 """
 Define a Loss function
@@ -51,7 +53,7 @@ Train the network on CIFAR-100
 """
 
 
-for epoch in range(2):  # loop over the dataset multiple times
+for epoch in range(0):  # loop over the dataset multiple times
 
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
