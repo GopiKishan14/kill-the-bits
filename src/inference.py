@@ -28,9 +28,9 @@ parser.add_argument('--device', default='cuda', choices=['cpu', 'cuda'],
                     help='For inference on CPU or on GPU')
 # parser.add_argument('--data-path', default='/datasets01/imagenet_full_size/061417/', type=str,
 #                     help='Path to ImageNet dataset')
-parser.add_argument('--batch-size', default=128, type=int,
+parser.add_argument('--batch-size', default=32, type=int,
                     help='Batch size for fiuetuning steps')
-parser.add_argument('--n-workers', default=20, type=int,
+parser.add_argument('--n-workers', default=0, type=int,
                     help='Number of workers for data loading')
 
 

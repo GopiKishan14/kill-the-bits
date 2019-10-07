@@ -11,7 +11,7 @@ import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 
 
-def load_data(batch_size=32, nb_workers=4):
+def load_data(batch_size=32, nb_workers=0):
     """
     Loads data from ImageNet dataset.
 

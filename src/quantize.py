@@ -37,9 +37,9 @@ parser.add_argument('--model', default='resnet18', choices=['resnet18', 'resnet5
 parser.add_argument('--block', default='all', type=str,
                     help='Block to quantize (if all, quantizes whole network)')
 
-parser.add_argument('--n-iter', default=100, type=int,
+parser.add_argument('--n-iter', default=10, type=int,
                     help='Number of EM iterations for quantization')
-parser.add_argument('--n-activations', default=1024, type=int,
+parser.add_argument('--n-activations', default=32, type=int,
                     help='Size of the batch of activations to sample from')
 
 parser.add_argument('--block-size-cv', default=9, type=int,
@@ -63,12 +63,12 @@ parser.add_argument('--eps', default=1e-8, type=float,
 
 # parser.add_argument('--data-path', default='/datasets01/imagenet_full_size/061417/', type=str,
 #                     help='Path to ImageNet dataset')
-parser.add_argument('--batch-size', default=128, type=int,
+parser.add_argument('--batch-size', default=32, type=int,
                     help='Batch size for fiuetuning steps')
 parser.add_argument('--n-workers', default=20, type=int,
                     help='Number of workers for data loading')
 
-parser.add_argument('--finetune-centroids', default=2500, type=int,
+parser.add_argument('--finetune-centroids', default=10, type=int,
                     help='Number of iterations for layer-wise finetuning of the centroids')
 parser.add_argument('--lr-centroids', default=0.05, type=float,
                     help='Learning rate to finetune centroids')
@@ -77,7 +77,7 @@ parser.add_argument('--momentum-centroids', default=0.9, type=float,
 parser.add_argument('--weight-decay-centroids', default=1e-4, type=float,
                     help='Weight decay')
 
-parser.add_argument('--finetune-whole', default=10000, type=int,
+parser.add_argument('--finetune-whole', default=10, type=int,
                     help='Number of iterations for global finetuning of the centroids')
 parser.add_argument('--lr-whole', default=0.01, type=float,
                     help='Learning rate to finetune classifier')
@@ -85,7 +85,7 @@ parser.add_argument('--momentum-whole', default=0.9, type=float,
                     help='Momentum when using SGD')
 parser.add_argument('--weight-decay-whole', default=1e-4, type=float,
                     help='Weight decay')
-parser.add_argument('--finetune-whole-epochs', default=9, type=int,
+parser.add_argument('--finetune-whole-epochs', default=2, type=int,
                     help='Number of epochs for global finetuning of the centroids')
 parser.add_argument('--finetune-whole-step-size', default=3, type=int,
                     help='Learning rate schedule for global finetuning of the centroids')
